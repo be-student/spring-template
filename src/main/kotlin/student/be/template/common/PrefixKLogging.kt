@@ -1,19 +1,18 @@
 package student.be.template.common
 
+import io.github.oshai.kotlinlogging.KLoggable
 import io.github.oshai.kotlinlogging.KLogger
+import student.be.template.common.KotlinPrefixLogging.Companion.prefix
 
-private val logger = KLog
-
-open class PrefixKLogging(prefix: String? = null) : KLogger {
+abstract class PrefixKLogging(prefix: String? = null) : KLoggable {
 
     override val logger: KLogger by lazy {
         if (prefix.isNullOrBlank()) {
-            logger().pre
+            logger().prefix()
         } else {
-            KLog.logger(prefix)
+            logger().prefix(prefix)
         }
     }
-
 }
 
 class KotlinPrefixLogging(
