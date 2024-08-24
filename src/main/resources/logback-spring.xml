@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProfile name="local">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%date %highlight(%5level) %magenta(%-20thread) %cyan(\(%36logger{36}\)) [%boldBlue(%mdc{key-trace-id:--}):%boldGreen(%mdc{key-user-id:--})] %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <logger name="student.be" level="INFO"/>
+
+        <logger name="org.hibernate.type.BasicTypeRegistry" level="WARN"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+
+        <logger name="jdbc.audit" level="WARN" additivity="false"/>
+        <logger name="jdbc.sqlonly" level="WARN" additivity="false"/>
+        <logger name="jdbc.sqltiming" level="WARN" additivity="false"/>
+        <logger name="jdbc.resultset" level="WARN" additivity="false"/>
+        <logger name="jdbc.resultsettable" level="WARN" additivity="false"/>
+        <logger name="jdbc.connection" level="WARN" additivity="false"/>
+        <logger name="MySQL" level="WARN"/>
+
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+            <!--    <appender-ref ref="Sentry"/>-->
+        </root>
+    </springProfile>
+</configuration>

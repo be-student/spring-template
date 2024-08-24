@@ -15,7 +15,7 @@ abstract class PrefixKLogging(prefix: String? = null) : KLoggable {
     }
 }
 
-class KotlinPrefixLogging(
+private class KotlinPrefixLogging(
     prefix: String,
     private val logger: KLogger,
 ) : KLogger by logger {
