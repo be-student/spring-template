@@ -4,12 +4,10 @@ import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.slf4j.MDC
-import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 import student.be.template.common.LoggingHeaders
 import java.util.*
 
-@Component
 class MdcFilter : OncePerRequestFilter() {
     override fun doFilterInternal(
         request: HttpServletRequest,
